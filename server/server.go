@@ -9,7 +9,6 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/RadientBrain/Detox-Dopamine/pkg/db"
 	"github.com/RadientBrain/Detox-Dopamine/pkg/logger"
 
 	"go.elastic.co/apm/module/apmhttp"
@@ -46,9 +45,6 @@ func Init() {
 	// the request it is currently handling
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
-
-	// shutdown data sources
-	db.CloseMongo()
 
 	// Shutdown server
 	logger.LogMessage("info", "Shutting down server...")

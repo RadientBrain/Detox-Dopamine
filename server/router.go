@@ -38,5 +38,8 @@ func NewRouter() *gin.Engine {
 	health := new(controllers.HealthController)
 	router.GET("/health", health.Status)
 
+	detox := router.Group("/detox")
+	detox.POST("/generate", controllers.Generate)
+
 	return router
 }

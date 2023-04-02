@@ -14,9 +14,6 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
-.DS_Store
-build/*
-log.txt
-nohup.out
-
-*/node_modules
+# Auth token for tests
+.openai-token
+.idea
