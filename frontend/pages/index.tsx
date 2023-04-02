@@ -71,7 +71,7 @@ export default function Home() {
     try {
       if (localStorage.getItem("apiKey")) {
         const response = await axios.post(
-          "http://localhost:4444/detox/generate",
+          "https://detox-dopamine-production.up.railway.app/detox/generate",
           {
             "api-key": localStorage.getItem("apiKey"),
           }
@@ -99,7 +99,7 @@ export default function Home() {
       if (!localStorage.getItem("apiKey")) {
         setLocal(1);
         const response = await axios.post(
-          "http://localhost:4444/detox/generate",
+          "https://detox-dopamine-production.up.railway.app/detox/generate",
           {
             "api-key": apiKey,
           }
